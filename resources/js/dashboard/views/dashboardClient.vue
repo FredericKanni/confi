@@ -11,17 +11,17 @@ import {apiServices} from '../_services/api.services';
 export default {
         data(){
             return{
-                user: JSON.parse (authenticationService.getCurrentUser()), // fait référence dans le authenticationservice
-                token: this.user.token
+              //  user: JSON.parse (authenticationService.getCurrentUser()), // fait référence dans le authenticationservice
+               // token: this.user.token
             }
         },
         methods:{
-            getCurrentUserDB(){
-                 apiServices.post('/api/currentUser',token)  //envoie sur une route avec token
-                    .then(({ response }) => {
-                        console.log(response)
-                    })
-            },
+            // getCurrentUserDB(){
+            //      apiServices.post('/api/currentUser',token)  //envoie sur une route avec token
+            //         .then(({ response }) => {
+            //             console.log(response)
+            //         })
+            // },
         },
 
         created(){

@@ -8,9 +8,12 @@
           <h1>CONFIPEI</h1>
       </v-toolbar-title>
       <v-spacer></v-spacer>
+      
+     <panier></panier>
+      
 <!--ajout login a revoir-->
-      <v-btn v-if="!ischeck" class="mr-4 deep-orange" to="/login">Log In</v-btn>
-      <v-btn v-if="ischeck" class="mr-4 deep-orange" @click="logout">Log Out</v-btn>
+      <!-- <v-btn v-if="!ischeck" class="mr-4 deep-orange" to="/login">Log In</v-btn>
+      <v-btn v-if="ischeck" class="mr-4 deep-orange" @click="logout">Log Out</v-btn> -->
 <!--ajout login a revoir-->
     </v-app-bar>
 
@@ -124,7 +127,8 @@
 
 
 <script>
-import { authenticationService } from '../../_services/authentication.service';
+import { authenticationService } from '../_services/authentication.service';
+import panier from '../views/components/panier.vue'
 import router from '../routes'
 export default {
   data() {
@@ -156,7 +160,11 @@ export default {
 
       
     };
-  }
+  },
+    components: {
+        panier,
+       
+    },
 };
 </script>
 

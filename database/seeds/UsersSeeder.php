@@ -24,21 +24,21 @@ class UsersSeeder extends Seeder
 
             ],
             [
-                "id" => 2,
-                "name" => "KrishnaPermal",
+                "id" => 3,
+                "name" => "KANNI",
                 //"firstname" => "Krishna",
-                "email" => "krishnapermal@gmail.com",
+                "email" => "kannif@ymail.com",
                 "password" => bcrypt('admin'),
-                "id_role" => "2"
+                "id_role" => "3"
 
             ],
             [
-                "id" => 3,
+                "id" => 2,
                 "name" => "KrishNaiken",
                 //"firstname" => "Krishna",
                 "email" => "krishnaiken@gmail.com",
                 "password" => bcrypt('admin'),
-                "id_role" => "3"
+                "id_role" => "2"
 
             ]
         ];

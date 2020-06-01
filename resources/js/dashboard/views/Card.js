@@ -1,9 +1,14 @@
-
 import Axios from 'axios';
+import btnAjoutPanier from './components/btnAjoutPanier.vue';
+
 
 export default {
-   
-    data:() => ({
+
+    components: {
+        btnAjoutPanier,
+    },
+
+    data: () => ({
         produits: [],
         fruits: [],
         price: [],
@@ -13,9 +18,9 @@ export default {
         search: null,
         loading: false,
     }),
-    
+
     watch: {
-        search: function (val) {
+        search: function(val) {
             if (val && val.length > 2) { //Si la valeur plus grand que 2 alors il fait ce qu'il a dedans;
                 this.loading = true
                 Axios.get('/api/produits/fruits', { params: { query: val } })
@@ -41,10 +46,10 @@ export default {
                 })
             this.produitsDisplay = this.produits;
         },
-        
-        displayFruits(_fruits){
-            var fruits=[];
-            _fruits.forEach(_fruit=>{
+
+        displayFruits(_fruits) {
+            var fruits = [];
+            _fruits.forEach(_fruit => {
                 fruits.push((_fruit.name))
             })
             return fruits.join(', ');
@@ -72,7 +77,7 @@ export default {
 
                                         _produitsDisplay[produit.id] = _produit
                                         this.produitsDisplay.push(_produit)
-                                        //console.log(this.produitsDisplay)
+                                            //console.log(this.produitsDisplay)
                                     }
                                 })
                             }
@@ -112,7 +117,7 @@ export default {
                 })
             }
         }, */
-        
+
     },
 
     created() {

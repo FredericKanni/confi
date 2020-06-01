@@ -50,6 +50,8 @@
                 <v-card-subtitle>Liste de Fruits: {{displayFruits(produit.fruits)}}</v-card-subtitle>
                 <v-card-subtitle>Prix: {{produit.price}} €</v-card-subtitle>
                 <v-spacer />
+
+                <btnAjoutPanier :produit="produit"></btnAjoutPanier>
               </v-card-actions>
             </v-col>
           </v-row>
