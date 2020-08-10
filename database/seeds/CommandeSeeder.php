@@ -16,13 +16,44 @@ class CommandeSeeder extends Seeder
      */
     public function run()
     {
-        factory(Commandes::class, 5)->create()
-        ->each(function ($u) {
-            $u->produit()->saveMany(factory(Produits::class, 1)->make()
-        );
-        //->each(function ($p) {
-           // $p->user()->saveMany(factory(User::class, 1)->make());
-            //});
-        });
+        // factory(Commandes::class, 5)->create();
+        // // ->each(function ($u) {
+        // //     $u->produit()->saveMany(factory(Produits::class, 1)->make()
+        // // );
+        // // //->each(function ($p) {
+        // //    // $p->user()->saveMany(factory(User::class, 1)->make());
+        // //     //});
+        // // });
+
+
+
+
+
+        // $array = [
+        //     [
+        //         "id_user" => 1,
+              
+               
+
+        //     ],
+        //     [
+        //         "id_user" => 2,
+            
+               
+        //     ],
+        //     [
+        //         "id_user" => 3,
+              
+
+        //     ],
+        // ];
+
+        // DB::table('commande')->insert(
+        //     $array
+        // );
+
+
+
+
     }
 }

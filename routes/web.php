@@ -21,6 +21,16 @@ use Illuminate\Support\Facades\Route;
 /* Route::get('/', 'AccueilController@index'); */
 
 
+Route::get('/test-mail' , function(){
+    return new App\Mail\Contact(
+        [
+            'nom' => 'toto',
+            'email' => 'totoland@toto.com',
+            'message' => 'lol',
+        ]
+    );
+});
+
 Route::prefix('/')->group(function(){
     Route::get('/', 'AdminController@index');
     Route::get('/{any}', 'AdminController@index')->where('any','.*');

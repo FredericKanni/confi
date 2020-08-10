@@ -6,8 +6,14 @@ import Card from "./views/Card.vue";
 import dashboardProducteur from './views/dashboardProducteur.vue';
 import dashboardClient from './views/dashboardClient.vue';
 import Login from "./login/Login.vue";
+import TousPanier from "./views/TousPanier.vue";
 import { Role } from './_helpers/role';
-import { authenticationService } from '../dashboard/_services/authentication.service'
+import { authenticationService } from './_services/authentication.service'
+// import Stepper from './views/components/stepper.vue';
+import Step from './views/step.vue';
+import Basket from './views/basketOrder.vue';
+
+import listeProducteurs from "./views/listeProducteurs.vue";
 
 Vue.use(VueRouter);
 
@@ -23,12 +29,38 @@ const router = new VueRouter({
             name: 'confitures',
             component: Card,
         },
-
-         {
+        {
+            path: '/basket',
+            name: 'basket',
+            component: Basket,
+        },
+        {
             path: '/login',
             name: 'login',
             component: Login,
-       
+
+        },
+
+        // {
+        //     path: '/confirmation',
+        //     name: 'stepper',
+        //     component: Stepper,
+        //     meta: { authorize: [Role.Producteur, Role.Admin, Role.Client] }
+        // },
+
+
+        {
+            path: '/confirmation',
+            name: 'step',
+            component: Step,
+
+        },
+
+        {
+            path: '/touspannier',
+            name: 'touspannier',
+            component: TousPanier,
+
         },
 
         {
@@ -49,6 +81,13 @@ const router = new VueRouter({
             name: 'client',
             component: dashboardClient,
             //meta: { authorize: [Role.Producteur] }
+        },
+
+        {
+            path: '/listeProducteurs',
+            name: 'listeProducteurs',
+            component: listeProducteurs,
+            meta: { authorize: [Role.Admin] }
         },
     ]
 })
@@ -83,6 +122,3 @@ router.beforeEach((to, from, next) => {
 
 
 export default router;
-
-
-

@@ -6,11 +6,12 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use Laravel\Cashier\Billable;
 
 class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
-
+    use Billable;
     /**
      * The attributes that are mass assignable.
      *
@@ -47,5 +48,21 @@ class User extends Authenticatable
     public function producteur()
     {
         return $this->hasOne(Producteurs::class, 'id_users');
+    }
+
+    public function commande()
+
+    {
+
+        return $this->hasMany(Commandes::class, 'id_user');
+
+    }
+
+    public function adresses()
+
+    {
+
+        return $this->hasMany(Adresse::class, 'id_user');
+
     }
 }

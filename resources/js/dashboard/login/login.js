@@ -1,4 +1,3 @@
-
 import { authenticationService } from '../_services/authentication.service';
 
 export default {

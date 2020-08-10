@@ -26,4 +26,6 @@ class UsersController extends Controller
         // RECUPERE LE USER QUI A LE TOKEN 
         // RETOURNE LE USER
     }
+
+     
 }

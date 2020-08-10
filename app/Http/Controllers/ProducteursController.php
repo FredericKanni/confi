@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class ProducteursController extends Controller
 {
-   /*  public function getProducteurs()
+    public function index()
     {
-        $producteurs = Producteurs::get();
+        $producteurs = Producteurs::with('user')->get();
         return ProducteursResource::collection($producteurs);      
-    } */
+    }
 }

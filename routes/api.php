@@ -49,7 +49,28 @@ Route::get('fruits', 'FruitsController@index');
 Route::get('produits', 'ProduitController@index');
 
 
+Route::get('producteurs', 'ProducteursController@index');
+
 
 //Route::get('Fruits', 'FruitsController@index');
 
 //Route::get('users', 'UsersController@index');
+
+
+
+//TODO rajoute le role client 
+Route::middleware(['auth:api','roles:Admin|Producteur|Client'])->prefix('basket')->group(function () {
+   
+    Route::post('/', 'CommandesController@pushOrder'); 
+    Route::post('/pay', 'CommandesController@pay'); 
+ 
+}); 
+
+//adressse
+Route::middleware(['auth:api','roles:Admin|Producteur|Client'])->prefix('adresse')->group(function () {
+   
+    Route::post('/', 'CommandesController@addAdresse'); 
+}); 
+
+
+
